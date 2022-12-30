@@ -1,214 +1,91 @@
-
 import java.util.Scanner;
-
-import static java.lang.System.*;
-
+import java.lang.Math;
 
 public class Main {
+    public static void main (String[] args) {
+        try (Scanner scanner = new Scanner ( System.in )) {
+            System.out.println ( "      CALCUL SUR LES CIRCUITS RESISTIF EN CONTINU         -" );
+            System.out.println ( "-----------------------------------------------------------" );
+            System.out.println ( "-   1 RESISTANCE - 2 TENSION - 3 INTENSITE - 4 PUISSANCE  -" );
+            System.out.println ( "-----------------------------------------------------------" );
+            System.out.println ( "QUEL SONT LES VALEURS QUE TU CONNAIS, TAPE 1 OU 2 OU 3 OU 4" );
+            // choix des valeurs connues
+            System.out.println ( "donne ta premiere valeur" );
+            int choix1 = scanner.nextInt ();
+            System.out.println ( "donne ta deuxieme valeur" );
+            int choix2 = scanner.nextInt ();
+            //calcul possible en fonction du choix des valeurs
+            if ( (choix1 == 1) && (choix2 == 2) ) {
+                //calcul intensite et puissance
+                System.out.println ( "donne la tension" );
+                float tension = scanner.nextInt ();
+                System.out.println ( "donne la valeur de la resistance" );
+                var resistance = scanner.nextInt ();
+                System.out.println ( "valeur calculer" );
+                float intensite;
+                intensite = tension / resistance;
+                System.out.println ( "valeur de l'intensité = " + intensite + "ampere" );
+                int puissance;
+                puissance = (int) ((tension * tension ) / resistance);
+                System.out.println ( "valeur de la puissance = " + puissance + "watt");
 
-
-    private static int valanneau1;
-    private static int valanneau2;
-    private static int valresiste;
-
-
-
-
-    public static <valanneau2> void main(String[] args, int a4) throws IllegalStateException {
-        try (Scanner scanner = new Scanner ( in )) {
-            out.println ( "CODE COULEUR DE VOS RESISTANCES" );
-            out.println ( "COMBIEN D'ANNEAUX A VOTRE RESISTANCES 3,4,5" );
-            int nombreaneaux;
-            nombreaneaux = scanner.nextInt ();
-            int nbanneau = nombreaneaux + 10;
-            if (nbanneau == 13) {
-                out.println ( " VOTRE RESISTANCES A 3 ANNEAUX " );
-                out.println ( " COULEUR DE VOTRE PREMIER ANNEAUX " );
-                out.println ( " MARRON = 1, ROUGE = 2, ORANGE = 3, JAUNE = 4, VERT = 5 " );
-                out.println ( " BLEU = 6, VIOLET = 7, GRIS = 8, BLANC = 9, " );
-                int couleuran1 = scanner.nextInt ();
-                switch (couleuran1) {
-                    case 1:
-
-                        int valanneau1 = 1;
-                        out.println ( " valeur anneau = " + valanneau1 );
-                        break;
-                    case 2:
-
-
-                        valanneau1 = 2;
-                        out.println ( " valeur anneau = " + valanneau1 );
-                        break;
-                    case 3:
-
-                        valanneau1 = 3;
-                        out.println ( " valeur anneau = " + valanneau1 );
-                        break;
-                    case 4:
-
-                        valanneau1 = 4;
-                        out.println ( " valeur anneau = " + valanneau1 );
-                    case 5:
-
-                        valanneau1 = 5;
-                        out.println ( " valeur anneau = " + valanneau1 );
-                        break;
-                    case 6:
-
-                        valanneau1 = 6;
-                        out.println ( " valeur anneau = " + valanneau1 );
-                        break;
-                    case 7:
-
-                        valanneau1 = 7;
-                        out.println ( " valeur anneau = " + valanneau1 );
-                        break;
-                    case 8:
-
-                        valanneau1 = 8;
-                        out.println ( " valeur anneau = " + valanneau1 );
-                        break;
-                    case 9:
-
-                        valanneau1 = 9;
-                        out.println ( " valeur anneau = " + valanneau1 );
-                        break;
-
-                    default:
-                        break;
+                if ( (choix1 == 2) && (choix2 == 3) )
+                //calcul resistance et puissance
+                {
+                    System.out.println ( "donne la tension" );
+                    tension = scanner.nextInt ();
+                    System.out.println ( "donne la valeur de la intensite" );
+                    intensite = scanner.nextInt ();
+                    System.out.println ( "valeur calculer" );
+                    resistance = (int) (tension / intensite);
+                    System.out.println ( "valeur de la resistance = " + resistance +"ohms");
+                    puissance = (int) (tension * intensite);
+                    System.out.println ( "valeur de la puissance = " + puissance + "watts" );
                 }
-                    out.println (" COULEUR DE VOTRE DEUXIEME ANNEAUX ");
-                    out.println ( " NOIR + 0 'MARRON = 1, ROUGE = 2, ORANGE = 3, JAUNE = 4, VERT = 5 " );
-                    out.println ( " BLEU = 6, VIOLET = 7, GRIS = 8, BLANC = 9, " );
-                    int couleuran2;
-                    couleuran2 = scanner.nextInt ();
-
-                    switch (couleuran2) {
-                        case 1:
-
-                            int valanneau2 = 1;
-                            out.println ( " valeur anneau = " + valanneau2 );
-                            break;
-                        case 2:
-
-
-                            valanneau2 = 2;
-                            out.println ( " valeur anneau = " + valanneau2 );
-                            break;
-                        case 3:
-
-                            valanneau2 = 3;
-                            out.println ( " valeur anneau = " + valanneau2 );
-                            break;
-                        case 4:
-
-                            valanneau2 = 4;
-                            out.println ( " valeur anneau = " + valanneau2 );
-                        case 5:
-
-                            valanneau2 = 5;
-                            out.println ( " valeur anneau = " + valanneau2 );
-                            break;
-                        case 6:
-
-                            valanneau2 = 6;
-                            out.println ( " valeur anneau = " + valanneau2 );
-                            break;
-                        case 7:
-
-                            valanneau2 = 7;
-                            out.println ( " valeur anneau = " + valanneau2 );
-                            break;
-                        case 8:
-
-                            valanneau2 = 8;
-                            out.println ( " valeur anneau = " + valanneau2 );
-                            break;
-                        case 9:
-
-                            valanneau2 = 9;
-                            out.println ( " valeur anneau = " + valanneau2 );
-                            break;
-
-                        default:
-                            break;
-                    }
-                        /* CALCUL ANNEAU3 */
-                        out.println ( " COULEUR DE VOTRE TROISIEME ANNEAUX " );
-                        out.println ( " NOIR + 0 'MARRON = 1, ROUGE = 2, ORANGE = 3, JAUNE = 4, VERT = 5 " );
-                        out.println ( " BLEU = 6, VIOLET = 7, GRIS = 8, BLANC = 9, " );
-
-                        int couleuran3 = scanner.nextInt ();
-
-                        switch (couleuran3) {
-                            case 1:
-
-                                int valanneau3 = 1;
-                                out.println ( " valeur anneau = " + valanneau3 );
-                                break;
-                            case 2:
-
-
-                                valanneau3 = 10;
-                                out.println ( " valeur anneau = " + valanneau3 );
-                                break;
-                            case 3:
-
-                                valanneau3 = 100;
-                                out.println ( " valeur anneau = " + valanneau3 );
-                                break;
-                            case 4:
-
-                                valanneau3 = 1000;
-                                out.println ( " valeur anneau = " + valanneau3 );
-                            case 5:
-
-                                valanneau3 = 10000;
-                                out.println ( " valeur anneau = " + valanneau3 );
-                                break;
-                            case 6:
-
-                                valanneau3 = 100000;
-                                out.println ( " valeur anneau = " + valanneau3 );
-                                break;
-                            case 7:
-
-                                valanneau3 = 1000000;
-                                out.println ( " valeur anneau = " + valanneau3 );
-                                break;
-                            case 8:
-
-                                valanneau3 = 10000000;
-                                out.println ( " valeur anneau = " + valanneau3 );
-                                break;
-                            case 9:
-
-                                valanneau3 = 1000000000;
-                                out.println ( " valeur anneau = " + valanneau3 );
-                                break;
-
-                            default:
-                                valanneau3 = 1;
-                                valresiste = (( valanneau1 * 10 ) * valanneau3) + ( valanneau2 ) * valanneau3;
-                                out.println ( " VALEUR DE VOTRE RESISTANCE = " + valresiste );
-
-
-                                break;
-
-                                case 14:
-                            out.println ( " VOTRE RESISTANCES A 4 anneaux" );
-
-                            break;
-                        case 15:
-                            out.println ( " VOTRE RESISTANCES A 5 ANNEAUX " );
-                            break;
-                    }
+                if ( (choix1 == 3) && (choix2 == 4) )
+                //calcul resistance et puissance
+                {
+                    System.out.println ( "donne le valeur la resistance" );
+                    resistance = scanner.nextInt ();
+                    System.out.println ( "donne la valeur de la puissance" );
+                    puissance = scanner.nextInt ();
+                    System.out.println ( "valeur calculer" );
+                    tension = puissance / intensite;
+                    System.out.println ( "valeur de la tension = " + tension + "volt");
+                    resistance = (int) (puissance / (intensite * intensite ));
+                    System.out.println ( "valeur de la puissance = " + resistance +"ohms");
                 }
+                if ( (choix1 == 2) && (choix2 == 4) )
+                {
+                    System.out.println ( "donne la tension" );
+                    intensite = scanner.nextInt ();
+                    System.out.println ( "donne la puissance" );
+                    puissance = scanner.nextInt ();
+                    System.out.println ( "valeur calculer" );
+                    tension =  ( intensite*intensite ) / puissance;
+                    System.out.println ( "valeur de la tension = " + tension + "volt");
+                    resistance = (int) (puissance / (intensite * intensite ));
+                    System.out.println ( "valeur de la resistance = " + resistance +"ohms");
+
+                }
+                if ( (choix1 == 1) && (choix2 == 4) )
+                {
+                    System.out.println ( "donne la tension" );
+                    intensite = scanner.nextInt ();
+                    System.out.println ( "donne la puissance" );
+                    puissance = scanner.nextInt ();
+                    System.out.println ( "valeur calculer" );
+                    intensite =   puissance/tension;
+                    System.out.println ( "valeur de l'intensite' = " + intensite + "ampere");
+                    resistance = (int) (puissance / (intensite * intensite ));
+                    System.out.println ( "valeur de la resistance = " + resistance +"ohms");
 
 
             }
         }
-
-
-
     }
+}}
+
+
+
+
